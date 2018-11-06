@@ -87,7 +87,8 @@ def find_student(studentfile, fragment):
 
   # open the excel file
   wb = load_workbook(studentfile)
-  ws = wb[wb.get_sheet_names()[0]]
+  #ws = wb[wb.get_sheet_names()[0]]
+  ws = wb[wb.sheetnames[0]]
 
   # search for matches
   matches = []
@@ -138,7 +139,7 @@ def load_student_from_query(queryfile, studentID):
 
   # read the list of students
   wb = load_workbook(queryfile)
-  ws = wb[wb.get_sheet_names()[0]]
+  ws = wb[wb.sheetnames[0]]
 
   # get desired student from the list
   record = [a for a in ws if str(a[0].value) == str(studentID)]
@@ -179,7 +180,7 @@ def load_courses_from_query(queryfile, studentID):
   """
 
   wb   = load_workbook(queryfile)
-  ws   = wb[wb.get_sheet_names()[0]]
+  ws   = wb[wb.sheetnames[0]]
 
   #for a in ws:
   #  print a[0].value, studentID, a[0].value == studentID

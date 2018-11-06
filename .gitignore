@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# private config file
+config.json
+
+# Excel files
+*.xlsx
